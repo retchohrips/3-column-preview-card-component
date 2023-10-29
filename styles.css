@@ -1,0 +1,118 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+/* Normalize */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+
+:root {
+  /* Color variables */
+  --bright-orange: hsl(31deg 77% 52%);
+  --dark-cyan: hsl(184deg 100% 22%);
+  --very-dark-cyan: hsl(179deg 100% 13%);
+  --trans-white: hsl(0deg 0% 100% / 75%); /* paragraphs */
+  --very-light-gray: hsl(0deg 0% 95%); /* background, headings, buttons */
+}
+
+html: {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--trans-white);
+
+  background-color: var(--very-light-gray);
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  margin-inline: 20vw;
+}
+
+section {
+  position: relative;
+  height: 45vh;
+  padding: 3rem;
+
+  &:first-child {
+    background-color: var(--bright-orange);
+    border-radius: 0.5rem 0 0 0.5rem;
+
+    > button {
+      color: var(--bright-orange);
+    }
+  }
+
+  &:not(:first-child, :last-child) {
+    background-color: var(--dark-cyan);
+
+    > button {
+      color: var(--dark-cyan);
+    }
+  }
+
+  &:last-child {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 0.5rem 0.5rem 0;
+
+    > button {
+      color: var(--very-dark-cyan);
+    }
+  }
+}
+
+h2 {
+  font-family: "Big Shoulders Display", "Playfair Display", serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+button {
+  position: absolute;
+  bottom: 3em;
+
+  margin: 0;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+
+  background-color: var(--very-light-gray);
+  border: 2px solid var(--very-light-gray);
+  border-radius: 2rem;
+
+  &:focus,
+  &:hover {
+    color: var(--very-light-gray) !important;
+    background-color: inherit;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 1.5em;
+  width: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  & a {
+    color: hsl(228deg 45% 44%);
+  }
+}
